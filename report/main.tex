@@ -1,0 +1,42 @@
+\documentclass[en]{thesis}
+\usepackage{setspace}
+\usepackage{fontawesome5}
+\doublespacing
+
+% Document variables.
+\input{Variables/Variables}
+
+\begin{document}
+\include{Matter/00-Cover}
+\include{Matter/01-FPage}
+
+\pagenumbering{roman}
+
+% Declaration of authorship.
+\include{Matter/02-Declaration}
+\include{Chapters/00-Abstract}
+
+\tableofcontents\plainblankpage
+\listoffigures\plainblankpage
+
+\pagenumbering{arabic}
+
+\include{Chapters/01-Introduction}
+\include{Chapters/02-EDA}
+\include{Chapters/03-Sources}
+\include{Chapters/04-Comparision}
+\include{Chapters/05-Conclusion}
+
+
+\appendix
+\input{Matter/06-Appendices}
+\input{Chapters/Appendices/00-AppendixA}
+%\input{Chapters/Appendices/01-AppendixB}
+
+% Annexes: Work that *YOU DID NOT* developed.
+%\input{Matter/07-Annexes}
+%\input{Chapters/Annexes/00-AnnexA}
+
+% Back page.
+\input{Matter/08-BPage}
+\end{document}

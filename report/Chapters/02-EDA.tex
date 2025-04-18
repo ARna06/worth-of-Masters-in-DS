@@ -1,0 +1,62 @@
+\chapter{Data Overview}
+
+To evaluate the return on investment (ROI) of pursuing a Master’s degree in Data Science, this study utilizes a structured dataset containing detailed information about data professionals across the globe. The data includes demographic, educational, professional, and compensation-related variables, enabling a multi-faceted exploration of how various factors influence salary outcomes in the data science job market.
+
+\section{Dataset Structure}
+
+The dataset comprises several key columns, each representing an important aspect of the respondent's background or employment. The most relevant fields used in this analysis include:
+
+\begin{itemize}
+    \item \textbf{Q5} – Country of residence
+    \item \textbf{Q6} – Highest level of formal education completed
+    \item \textbf{Q8} – Current employment status
+    \item \textbf{Q15} – Job title or current role
+    \item \textbf{Q24} – Industry of employer
+    \item \textbf{Q25} – Size of the employing organization
+    \item \textbf{Q10} – Years of experience in coding
+    \item \textbf{Q11} – Years of experience in current role
+    \item \textbf{Q29} – Annual compensation (converted to USD)
+\end{itemize}
+
+These columns were selected for their direct relevance to the analysis of salary trends and educational outcomes. Additional variables (e.g., programming languages used, tools and platforms familiar to respondents) were omitted from this report to maintain focus on the core research objective.
+
+\section{Initial Filtering and Cleanup}
+
+Given the self-reported nature of the dataset, several preprocessing steps were applied to improve data quality and ensure reliable comparisons:
+
+\begin{enumerate}
+    \item \textbf{Employment Status Filter:} Only responses indicating full-time employment were retained (\texttt{Q8 = 'Employed full-time'}). This excludes students, freelancers, and part-time workers whose income patterns may not be comparable.
+    
+    \item \textbf{Salary Range Filtering:} Responses with unreported or ambiguous salary data were removed. To mitigate the influence of outliers and likely reporting errors, a salary range filter was applied:
+    \begin{itemize}
+        \item Minimum salary: \$5,000
+        \item Maximum salary: \$500,000
+    \end{itemize}
+    Salaries outside this range were either considered unrealistic or unrepresentative for the purposes of this study.
+
+    \item \textbf{Missing Data Handling:} Entries missing critical values (e.g., country, education level, or job title) were excluded. This ensured consistent group-level comparisons in the visual analysis.
+
+    \item \textbf{Standardizing Education Levels:} Education levels were grouped into four standardized categories:
+    \begin{itemize}
+        \item Bachelor’s degree
+        \item Master’s degree
+        \item Doctoral degree
+        \item Other (includes professional certifications, associate degrees, etc.)
+    \end{itemize}
+    This grouping helped simplify visualizations and reduce noise in comparisons.
+
+    \item \textbf{Experience Normalization:} Years of experience were extracted and converted to numerical format to enable correlation analysis with salary.
+
+    \item \textbf{Country-Level Aggregation:} Countries with very few respondents were either excluded or grouped under “Other” to avoid skewing visual representations.
+\end{enumerate}
+
+\section{Post-Cleaning Dataset Profile}
+
+After the cleanup process, the refined dataset included approximately:
+\begin{itemize}
+    \item \textbf{20,000+} full-time respondents
+    \item \textbf{Over 60} countries
+    \item \textbf{Dozens of distinct job roles} — with a focus on common titles such as Data Scientist, Data Analyst, Machine Learning Engineer, and Software Engineer
+\end{itemize}
+
+This cleaned and structured dataset forms the basis for the salary distribution analysis, role-specific comparisons, and education-based insights discussed in subsequent sections of the report.
